@@ -1,2 +1,4 @@
 # Image-Classifier-using-Differential-Privacy
 Differential Privacy (DP) is a technique for preserving the privacy of individuals in a dataset while allowing meaningful analysis of the data. The idea of the technique is to add random noise to the data in such a way that no inferences can be made about sensitive data. 
+
+The dataset used in this analysis is publicly available for download at: https://drive.google.com/file/d/19CoKtewBibqszidkH0TMaY0EefQ9eT0d/view?usp=sharing. It contains 1,996 images of smokers and 1,279 for non-smokers. The images are scaled to a square-size of 250x250 px. The original images being larger were shrinked to this size and padded with zeros (i.e. SAME padding was applied).
