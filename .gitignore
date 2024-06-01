@@ -6,3 +6,5 @@ smokers/
 dataset.zip
 Official.ipynb
 Graphing.ipynb
+
+*.pdf
