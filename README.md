@@ -27,9 +27,7 @@ The Noise Multiplier directly influences the relationship between the noise adde
 ##  Non-Private CNN Model
 The non-private CNN model is trained first with 13 Epochs. The performance metrics of the model are shown as graphs below:
 
-<img src="images/non-private-accuracy.png" alt="non-private-accuracy" width="500" height="auto">
-
-<img src="images/non-private-loss.png" alt="non-private-loss" width="500" height="auto">
+<img src="images/non-private-accuracy.png" alt="non-private-accuracies" width="auto" height="auto">
 
 ##  Differentially private CNN model
 
@@ -38,3 +36,20 @@ The following were the results of each DP model:
 ### 1. Privacy Budget = (0.9625907, 0.0001)
 
 <img src="images/DP Graphs/first-budget.png" alt="first-budget" width="auto" height="auto">
+
+### 2. Privacy Budget = (0.7985293, 0.0001)
+
+<img src="images/DP Graphs/second-budget.png" alt="second-budget" width="auto" height="auto">
+
+### 3. Privacy Budget = (0.6814771, 0.0001)
+
+<img src="images/DP Graphs/third-budget.png" alt="third-budget" width="auto" height="auto">
+
+# Conclusion
+For the base CNN model without differential privacy, the final validation accuracy obtained is 0.7939. The Loss plot shows a steady decline in validation loss. There is a jump in the loss function after 9 Epochs but overall the validation loss still shows a gradual decline. Therefore, it can be deduced that the model has not overfitted and has achieved a reasonable validation accuracy. This validation accuracy is assumed to be the benchmark for the CNN model using differential privacy.
+
+The second DP model (ε = 0.7985293) over-fitted because there was a gradual increase in the training and validation losses throughout the training process. Therefore, the selected hyperparameters were not suitable for this particular model.
+
+The first ((ε) = 0.9625907) and third ((ε) = 0.6814771) models provide an opportunity for a good comparison. Both models have almost exactly the same validation accuracies of 0.7084 and 0.6931 respectively. However, there is a decrease in the accuracies of 11.2% in the first model and 13.2% in the third model with respect to the benchmark validation accuracy. This decrease in accuracy can be attributed to the privacy-preserving mechanisms employed during the training process. DP introduces noise to the model’s training process which perturbs the gradients and adds randomness to the learning procedure. This noise can interfere with the model’s ability to accurately generalize and make predictions. As a result, there is a decrease in validation accuracy.
+
+Judging from the validation loss graphs of the respective DP models, it can be seen that the third model has over-fitted a bit more than the first one. However, considering the fact that the third model has a much lower ε value, allowing for more privacy preservation while also keeping its validation loss from not increasing too much as compared to the second model, we can conclude that the Differentially Private CNN model with the privacy budget of (0.6814771, 0.0001) is the optimal model for this dataset given the selected hyperparameters.
