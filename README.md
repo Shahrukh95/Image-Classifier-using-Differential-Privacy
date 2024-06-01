@@ -14,4 +14,16 @@ A suitable CNN model was first constructed to make a classifier in a non-private
 
 <img src="images/cnn-model.png" alt="CNN Model" width="500" height="auto">
 
+In order to keep the models for private and non-private training as similar as possible, the same batch size of 131 samples is used in both cases. This specific number was chosen because it the highest common factor of the number of training and testing images. When training a model with differential privacy, this ensures proper noise calibration and facilitates stable model optimization.
 
+# Finding the optimal ε value
+The Noise Multiplier directly influences the relationship between the noise added to the gradients and the privacy level represented by the epsilon (ε) value. A smaller ε value corresponds to stronger privacy protection. Choosing an appropriate noise multiplier is essential for achieving a good privacy level. Keeping all other hyper-parameters the same, the noise multiplier was adjusted to find an epsilon (ε) value in the desired range of (0,1) together with an Optimal RDP Order value of less than 20. In the official tensorflow privacy documentation, a value of 18 provides a good trade-off with utility.
+
+<img src="images/hyperparameters.png" alt="hyperparameters" width="500" height="auto">
+
+ε falls below 1 when the noise multiplier is 3 and the Optimal RDP order stays less than 20 until the noise multiplier is increased to 4.5. Therefore, the CNN model trained with differential privacy is evaluated for noise multiplier values of 3, 3.5 and 4.
+
+# Results
+##  Non-Private CNN Model
+The non-private CNN model is trained first with 13 Epochs. The training results are summarized as follows:
+<img src="images/non-private-table.png" alt="hyperparameters" width="500" height="auto">
