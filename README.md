@@ -25,5 +25,16 @@ The Noise Multiplier directly influences the relationship between the noise adde
 
 # Results
 ##  Non-Private CNN Model
-The non-private CNN model is trained first with 13 Epochs. The training results are summarized as follows:
-<img src="images/non-private-table.png" alt="hyperparameters" width="500" height="auto">
+The non-private CNN model is trained first with 13 Epochs. The performance metrics of the model are shown as graphs below:
+
+<img src="images/non-private-accuracy.png" alt="non-private-accuracy" width="500" height="auto">
+
+<img src="images/non-private-loss.png" alt="non-private-loss" width="500" height="auto">
+
+##  Differentially private CNN model
+
+The following were the results of each DP model:
+
+### 1. Privacy Budget = (0.9625907, 0.0001)
+
+<img src="images/DP Graphs/first-budget.png" alt="first-budget" width="auto" height="auto">
