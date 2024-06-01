@@ -12,6 +12,6 @@ The aim of this project was to evaluate a non-private and a differentially priva
 
 A suitable CNN model was first constructed to make a classifier in a non-private setting. The choice between using a deep or shallow model structure was made by considering the size of the dataset. Since the dataset does not consist of a very large number of images, a shallow model structure with one hidden layer was preferred. The model is effective in learning features from the dataset using a reasonable amount of computational resources. Once the non-private CNN model is trained, a new model is created with the same structure. This model is then trained with Differential Privacy using the "tensorflowprivacy" library. The structure of the CNN in both cases is as follows:
 
-<img src="images/cnn-model.png" alt="CNN Model" width="300" height="auto">
+<img src="images/cnn-model.png" alt="CNN Model" width="500" height="auto">
 
 
